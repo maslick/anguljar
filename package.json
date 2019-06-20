@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "./substitute_env_variables.sh dist/anguljar/index.html node server.js",
     "ng-serve": "ng serve",
     "build": "ng build --prod",
+    "express":  "node server.js",
+    "start": "./substitute_env_variables.sh dist/anguljar/index.html node server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
