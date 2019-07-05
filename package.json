@@ -6,7 +6,7 @@
     "ng-serve": "ng serve",
     "build": "ng build --prod",
     "express":  "node server.js",
-    "start": "./substitute_env_variables.sh dist/anguljar/index.html node server.js",
+    "start": "subs/substitute_env_variables.sh dist/anguljar/index.html node server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

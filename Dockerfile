@@ -10,11 +10,11 @@ FROM nginx:stable
 RUN adduser www-data root
 WORKDIR /var/www
 
-COPY docker/nginx.conf /etc/nginx/nginx.conf
-COPY docker/site.conf /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+COPY nginx/site.conf /etc/nginx/conf.d/default.conf
+COPY subs/substitute_env_variables.sh ./entrypoint.sh
 
 COPY --from=builder /tmp/dist/anguljar ./
-COPY --from=builder /tmp/substitute_env_variables.sh ./entrypoint.sh
 
 RUN touch /var/run/nginx.pid && \
     chown -R www-data:root /var/run/nginx.pid && \
